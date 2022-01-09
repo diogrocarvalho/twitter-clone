@@ -1,0 +1,22 @@
+<div class="container fixed-top">
+  <div class="row post-holder">
+    <div class="col-12 pb-3"><span class="h4">Home Page</span></div>
+    <div class="col-sm-1 col-2 d-flex justify-content-center align-items-center">
+      <span class="avatar">DF</span>
+    </div>
+    <div class="col-sm-11 col-10">
+      <textarea
+        name="content"
+        rows="3"
+        [(ngModel)]="post.content"
+        [maxLength]="maxPostLength"
+        placeholder="What is happening?"
+      ></textarea>
+      <span class="dropdown-divider"></span>
+    </div>
+    <div class="col-12 d-flex justify-content-end align-items-center pt-3">
+      <span class="counter">{{ maxPostLength - post.content.length }} characters left</span>
+      <button class="btn btn-outline-primary" (click)="newPost()" [disabled]="!post.content.length">Add post</button>
+    </div>
+  </div>
+</div>
